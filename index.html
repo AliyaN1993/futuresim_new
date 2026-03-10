@@ -11,25 +11,17 @@
        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=107245981", "ym");
-
-       ym(107245981, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true,
-            ecommerce:"dataLayer"
-       });
+       ym(107245981, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, ecommerce:"dataLayer" });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/107245981" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <link rel="stylesheet" href="style.css"?v=2">
+
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body class="dark-theme">
 
     <header>
         <div class="container nav-container">
-            <div class="logo">
-                <span class="logo-icon">▲</span> FutureSim
-            </div>
+            <div class="logo"><span class="logo-icon">▲</span>FutureSim</div>
             <nav class="desktop-nav">
                 <a href="#whatis">О продукте</a>
                 <a href="#howitworks">Как это работает</a>
@@ -39,55 +31,52 @@
             <div class="nav-cta">
                 <button class="btn btn-secondary">Войти</button>
             </div>
-            <button class="mobile-nav-toggle" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </header>
 
     <section class="hero" id="hero">
         <div class="container hero-grid">
             <div class="hero-content">
-                <h1 class="main-headline fade-in">А если бы ты мог увидеть последствия своих карьерных решений заранее?</h1>
-                <p class="hero-description delay-1">FutureSim — это AI-платформа для моделирования карьерных сценариев и прогнозирования возможных исходов. Принимайте взвешенные решения на основе данных, а не догадок.</p>
-                <button class="btn btn-primary btn-lg delay-2" onclick="ym(107245981, 'reachGoal', 'click_try_service'); console.log('Цель отправлена');">
+                <h1 class="main-headline">А если бы ты мог увидеть последствия своих карьерных решений заранее?</h1>
+                <p class="hero-description">FutureSim — это AI-платформа для моделирования карьерных сценариев и прогнозирования исходов. Принимайте решения на основе данных.</p>
+                <button class="btn btn-primary btn-lg" onclick="ym(107245981, 'reachGoal', 'click_try_service'); console.log('Цель отправлена');">
                     Начать симуляцию
                 </button>
             </div>
-            <div class="hero-visual delay-3">
-                <div class="holographic-dashboard-mock">
-                    <div class="dashboard-rect r1"></div>
-                    <div class="dashboard-rect r2"></div>
-                    <div class="dashboard-rect r3"></div>
+            <div class="hero-visual">
                 </div>
-            </div>
         </div>
     </section>
 
     <section class="whatis section-padding" id="whatis">
-        <div class="container text-center">
+        <div class="container">
             <h2 class="section-title">Что такое FutureSim</h2>
             <div class="whatis-grid">
                 <div class="whatis-item">
                     <div class="icon-circle">AI</div>
                     <h3>Помощник в выборе</h3>
-                    <p>Индивидуальный подход к вашим целям.</p>
+                    <p>Индивидуальный подход к вашим профессиональным целям.</p>
                 </div>
                 <div class="whatis-item">
                     <div class="icon-circle">Data</div>
                     <h3>Data-Driven</h3>
-                    <p>Основан на миллионах реальных карьерных путей.</p>
+                    <p>Основан на миллионах реальных сценариев успеха.</p>
                 </div>
                 <div class="whatis-item">
                     <div class="icon-circle">IQ</div>
                     <h3>Интеллект</h3>
-                    <p>Передовые AI-алгоритмы моделирования.</p>
+                    <p>Передовые алгоритмы для точного моделирования будущего.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="howitworks section-padding" id="howitworks">
-        <div class="container text-center">
-            <h2 class="section-title">Как это работает</h2>
-            <div class="steps-grid">
+    <footer class="text-center">
+        <div class="container footer-container">
+            <p>&copy; 2024 FutureSim Corp. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
