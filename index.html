@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FutureSim — AI-моделирование карьеры</title>
+    <title>FutureSim — AI-платформа для симуляции карьеры</title>
     
     <script type="text/javascript">
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -13,67 +13,109 @@
        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=107245981", "ym");
        ym(107245981, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
     </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/107245981" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-    <link rel="stylesheet" href="style.css?v=design_up">
+    <link rel="stylesheet" href="style.css?v=original_v1">
 </head>
 <body class="dark-theme">
 
-    <div class="bg-glow"></div>
-
     <header>
         <div class="container nav-container">
-            <div class="logo">Future<span>Sim</span></div>
+            <div class="logo"><span class="logo-icon">▲</span> FutureSim</div>
+            <nav class="desktop-nav">
+                <a href="#whatis">О продукте</a>
+                <a href="#howitworks">Как это работает</a>
+                <a href="#benefits">Преимущества</a>
+                <a href="#whoitisfor">Для кого</a>
+            </nav>
             <div class="nav-cta">
                 <button class="btn btn-secondary">Войти</button>
             </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container hero-center">
-            <div class="badge">New: AI Simulation 2.0</div>
-            <h1 class="main-headline">Увидь свое будущее раньше, <br><span>чем оно наступит</span></h1>
-            <p class="hero-description">FutureSim анализирует миллионы карьерных траекторий, чтобы предсказать твой успех с точностью 94%.</p>
+    <section class="hero" id="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1 class="main-headline">А если бы ты мог увидеть последствия своих карьерных решений заранее?</h1>
+                <p class="hero-description">FutureSim — это AI-платформа для моделирования карьерных сценариев и прогнозирования исходов. Принимайте решения на основе данных.</p>
+                <button class="btn btn-primary btn-lg" onclick="sendGoal()">Начать симуляцию</button>
+            </div>
+            <div class="hero-visual">
+                <div class="holographic-mock"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="whatis">
+        <div class="container text-center">
+            <h2 class="section-title">Что такое FutureSim</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="icon-circle">AI</div>
+                    <h3>Помощник в выборе</h3>
+                    <p>Индивидуальный подход к вашим профессиональным целям.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-circle">Data</div>
+                    <h3>Data-Driven</h3>
+                    <p>Основан на миллионах реальных сценариев успеха.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-circle">IQ</div>
+                    <h3>Интеллект</h3>
+                    <p>Передовые алгоритмы для точного моделирования будущего.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="howitworks">
+        <div class="container text-center">
+            <h2 class="section-title">Как это работает</h2>
+            <div class="grid-4">
+                <div class="step-card"><span class="step-num">1</span><h3>Профиль</h3><p>Внесите свои навыки и интересы.</p></div>
+                <div class="step-card"><span class="step-num">2</span><h3>Сценарии</h3><p>Проживите реалистичные ситуации.</p></div>
+                <div class="step-card"><span class="step-num">3</span><h3>Решения</h3><p>Делайте выбор в ключевые моменты.</p></div>
+                <div class="step-card"><span class="step-num">4</span><h3>Итог</h3><p>Увидьте будущее через 10-20 лет.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="benefits">
+        <div class="container text-center">
+            <h2 class="section-title">Преимущества</h2>
+            <div class="grid-3">
+                <div class="card"><h3>🛡️ Без риска</h3><p>Тестируйте решения без последствий.</p></div>
+                <div class="card"><h3>⚡ Быстро</h3><p>Инсайты за минуты, а не за годы жизни.</p></div>
+                <div class="card"><h3>🔍 Понятно</h3><p>Прозрачные отчеты о вашем будущем.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="whoitisfor">
+        <div class="container text-center">
+            <h2 class="section-title">Для кого FutureSim</h2>
+            <div class="grid-4">
+                <div class="card-simple"><h3>Студенты</h3><p>Выбор профессии с ясностью.</p></div>
+                <div class="card-simple"><h3>Профессионалы</h3><p>Безопасная смена сферы.</p></div>
+                <div class="card-simple"><h3>Карьеристы</h3><p>План для повышения.</p></div>
+                <div class="card-simple"><h3>Искатели</h3><p>Поиск призвания.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding text-center">
+        <div class="container">
+            <h2 class="section-title">Ваше идеальное будущее начинается сегодня.</h2>
             <button class="btn btn-primary btn-lg" onclick="sendGoal()">Начать симуляцию</button>
         </div>
     </section>
 
-    <section class="section-padding">
-        <div class="container">
-            <h2 class="section-title text-center">Почему FutureSim?</h2>
-            <div class="grid-3">
-                <div class="feature-card">
-                    <div class="f-icon">🧠</div>
-                    <h3>AI Нейросеть</h3>
-                    <p>Глубокий анализ твоих навыков и скрытого потенциала.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="f-icon">📈</div>
-                    <h3>Big Data</h3>
-                    <p>Прогнозы на основе реальных данных рынка труда 2024-2026.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="f-icon">🛡️</div>
-                    <h3>Без риска</h3>
-                    <p>Проживай ошибки в симуляции, а не в реальности.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            <div class="cta-box">
-                <h2 class="cta-headline">Готов к первой симуляции?</h2>
-                <p>Это бесплатно и займет всего 5 минут.</p>
-                <button class="btn btn-primary btn-lg" onclick="sendGoal()">Попробовать</button>
-            </div>
-        </div>
-    </section>
-
     <footer>
-        <div class="container footer-content">
-            <p>© 2024 FutureSim Corp. Моделируем успех.</p>
+        <div class="container footer-box">
+            <p>FutureSim</p>
+            <p>&copy; 2024 FutureSim Corp. Все права защищены.</p>
         </div>
     </footer>
 
