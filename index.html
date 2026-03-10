@@ -15,7 +15,7 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/107245981" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-    <link rel="stylesheet" href="style.css?v=total_version">
+    <link rel="stylesheet" href="style.css?v=final_pro">
 </head>
 <body class="dark-theme">
 
@@ -37,7 +37,7 @@
         <div class="container">
             <h1 class="main-headline">А если бы ты мог увидеть последствия своих карьерных решений заранее?</h1>
             <p class="hero-description">FutureSim — это AI-платформа для моделирования карьерных сценариев и прогнозирования возможных исходов. Принимайте взвешенные решения на основе данных, а не догадок.</p>
-            <button class="btn btn-primary btn-lg" onclick="ym(107245981, 'reachGoal', 'click_try_service');">Начать симуляцию</button>
+            <button class="btn btn-primary btn-lg" onclick="sendGoal()">Начать симуляцию</button>
         </div>
     </section>
 
@@ -68,21 +68,10 @@
         <div class="container">
             <h2 class="section-title text-center">Как это работает</h2>
             <div class="grid-4">
-                <div class="step"><span class="num">1</span><h3>Профиль</h3><p>Внесите свои текущие навыки и интересы в систему.</p></div>
+                <div class="step"><span class="num">1</span><h3>Профиль</h3><p>Внесите свои навыки и интересы в систему.</p></div>
                 <div class="step"><span class="num">2</span><h3>Сценарии</h3><p>Пройдите через реалистичные рабочие ситуации.</p></div>
-                <div class="step"><span class="num">3</span><h3>Решения</h3><p>Делайте ключевой выбор в переломные моменты карьеры.</p></div>
-                <div class="step"><span class="num">4</span><h3>Итог</h3><p>Увидьте предсказание вашей жизни через 10-20 лет.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" id="benefits">
-        <div class="container">
-            <h2 class="section-title text-center">Преимущества</h2>
-            <div class="grid-3">
-                <div class="card"><h3>🛡️ Без риска</h3><p>Тестируйте самые смелые идеи без угрозы для текущей работы.</p></div>
-                <div class="card"><h3>⚡ Быстро</h3><p>Получите инсайты, на которые в реальности ушли бы десятилетия.</p></div>
-                <div class="card"><h3>🔍 Понятно</h3><p>Получайте прозрачные отчёты и обоснование каждого прогноза.</p></div>
+                <div class="step"><span class="num">3</span><h3>Решения</h3><p>Делайте ключевой выбор в переломные моменты.</p></div>
+                <div class="step"><span class="num">4</span><h3>Итог</h3><p>Увидьте предсказание жизни через 10-20 лет.</p></div>
             </div>
         </div>
     </section>
@@ -91,7 +80,7 @@
         <div class="container">
             <h2 class="cta-headline">Ваше идеальное профессиональное будущее начинается сегодня.</h2>
             <p style="margin-bottom: 30px; opacity: 0.8;">Начните моделировать его прямо сейчас с помощью AI.</p>
-            <button class="btn btn-primary btn-lg" onclick="ym(107245981, 'reachGoal', 'click_try_service');">Начать симуляцию</button>
+            <button class="btn btn-primary btn-lg" onclick="sendGoal()">Начать симуляцию</button>
         </div>
     </section>
 
@@ -102,5 +91,18 @@
         </div>
     </footer>
 
+    <script>
+    function sendGoal() {
+        console.log("Кнопка нажата!");
+        if (typeof ym !== 'undefined') {
+            ym(107245981, 'reachGoal', 'click_try_service');
+            console.log("Цель отправлена в Метрику");
+            alert("Кнопка сработала! Цель отправлена."); 
+        } else {
+            console.error("Метрика не загружена");
+            alert("Ошибка: Метрика не загружена. Проверьте AdBlock.");
+        }
+    }
+    </script>
 </body>
 </html>
