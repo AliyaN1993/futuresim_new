@@ -1,9 +1,4 @@
-/* Современный сброс стилей */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
     --bg-color: #0B1426;
@@ -17,132 +12,75 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 80px 0; }
+.text-center { text-align: center; }
 
-/* Шапка сайта */
+/* Header */
 header {
     height: 80px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--border);
-    background: rgba(11, 20, 38, 0.95);
-    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
+    background: rgba(11, 20, 38, 0.9);
+    backdrop-filter: blur(10px);
     z-index: 1000;
 }
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.logo-icon { color: var(--accent-color); margin-right: 5px; }
-
-.desktop-nav { display: flex; gap: 30px; }
-.desktop-nav a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: 0.3s;
-}
+.nav-container { display: flex; justify-content: space-between; width: 100%; align-items: center; }
+.logo { font-weight: bold; font-size: 1.4rem; }
+.logo-icon { color: var(--accent-color); }
+.desktop-nav { display: flex; gap: 25px; }
+.desktop-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; }
 .desktop-nav a:hover { color: var(--accent-color); }
 
-/* Кнопки */
-.btn {
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-    border: none;
-    font-family: inherit;
-    display: inline-block;
-    text-align: center;
-}
-
+/* Buttons */
+.btn { padding: 12px 28px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; transition: 0.3s; }
 .btn-primary { background: var(--accent-color); color: #000; }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(198, 255, 46, 0.2); }
+.btn-primary:hover { box-shadow: 0 0 20px rgba(198, 255, 46, 0.4); transform: translateY(-2px); }
+.btn-secondary { background: transparent; color: #fff; border: 1px solid var(--border); }
 
-.btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid var(--border); }
+/* Hero */
+.hero { padding: 100px 0; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.main-headline { font-size: 3.2rem; line-height: 1.1; margin-bottom: 20px; }
+.hero-description { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px; }
 
-/* Главный блок (Hero) */
-.hero { padding: 120px 0; }
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.main-headline {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    font-weight: 800;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: 40px;
-    max-width: 600px;
-}
-
-/* Сетки для секций */
-.section-padding { padding: 80px 0; }
-.section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
-
+/* Cards Grid */
+.section-title { font-size: 2.5rem; margin-bottom: 50px; }
 .whatis-grid, .steps-grid, .benefits-grid, .target-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
 .whatis-item, .step, .benefit-card, .target-card {
     background: var(--card-bg);
-    padding: 40px;
-    border-radius: 24px;
+    padding: 35px;
+    border-radius: 20px;
     border: 1px solid var(--border);
-    transition: 0.3s;
+    text-align: left; /* Текст внутри карточек будет ровным */
 }
 
-.icon-circle {
-    width: 50px; height: 50px; background: var(--accent-color); color: #000;
-    border-radius: 12px; display: flex; align-items: center; justify-content: center;
-    margin-bottom: 24px; font-weight: 900;
+.icon-circle { 
+    width: 45px; height: 45px; background: var(--accent-color); color: #000; 
+    border-radius: 10px; display: flex; align-items: center; justify-content: center; 
+    margin-bottom: 20px; font-weight: bold; 
 }
 
-/* Футер */
-footer {
-    padding: 60px 0;
-    border-top: 1px solid var(--border);
-    margin-top: 50px;
-}
+.step-num { color: var(--accent-color); font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; display: block; }
+h3 { margin-bottom: 10px; }
 
-.footer-container { display: flex; justify-content: space-between; color: var(--text-secondary); }
+/* Footer */
+footer { padding: 40px 0; border-top: 1px solid var(--border); margin-top: 50px; }
+.footer-container { display: flex; justify-content: space-between; opacity: 0.6; font-size: 0.9rem; }
 
-/* Мобильная версия */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
     .main-headline { font-size: 2.5rem; }
-    .hero-description { margin: 0 auto 30px; }
 }
