@@ -1,18 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- ОТСЛЕЖИВАНИЕ ЦЕЛИ В ЯНДЕКС МЕТРИКЕ ---
+    // Находим все кнопки с текстом "Начать симуляцию"
+    const ctaButtons = document.querySelectorAll('.btn-primary');
+
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Проверяем, загружена ли Метрика, чтобы избежать ошибок в консоли
+            if (typeof ym !== "undefined") {
+                ym(107245981, 'reachGoal', 'click_try_service');
+                console.log('Цель click_try_service отправлена в Метрику');
+            }
+        });
+    });
+
+
     // --- Mobile Menu Toggle ---
     const navToggle = document.querySelector('.mobile-nav-toggle');
     const desktopNav = document.querySelector('.desktop-nav');
     const navCta = document.querySelector('.nav-cta');
     const header = document.querySelector('header');
 
-    // Simple mobile menu function
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             desktopNav.classList.toggle('active');
             navCta.classList.toggle('active');
             navToggle.classList.toggle('open');
-            // Basic styles applied via JS for brevity
+            
             if (desktopNav.classList.contains('active')) {
                 desktopNav.style.display = 'flex';
                 desktopNav.style.flexDirection = 'column';
@@ -30,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Header Scroll Effect ---
-    // Makes the header less transparent when the user scrolls down
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.style.backgroundColor = 'rgba(11, 20, 38, 0.98)';
@@ -41,14 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Smooth Scrolling For Anchor Links ---
-    // Standard behavior for modern browsers, but ensures smooth experience
+    // --- Smooth Scrolling ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             
-            // Close mobile menu on link click
-            if (desktopNav.classList.contains('active')) {
+            if (desktopNav && desktopNav.classList.contains('active')) {
                 desktopNav.classList.remove('active');
                 navToggle.classList.remove('open');
                 desktopNav.style.display = 'none';
