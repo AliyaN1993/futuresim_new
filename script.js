@@ -1,86 +1,66 @@
-document.addEventListener('DOMContentLoaded', () => {
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureSim — AI-платформа для симуляции карьеры</title>
+    
+    <script type="text/javascript">
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=107245981", "ym");
 
-    // Используем делегирование событий — это самый надежный способ
-    document.addEventListener('click', (event) => {
-        // Проверяем, что нажатый элемент содержит нужный класс
-        if (event.target.classList.contains('btn-primary')) {
-            console.log('Кнопка нажата!');
-            if (typeof ym !== "undefined") {
-                ym(107245981, 'reachGoal', 'click_try_service');
-                console.log('Цель click_try_service отправлена в Метрику');
-            } else {
-                console.warn('Метрика (ym) не найдена. Проверьте блокировщики рекламы.');
-            }
-        }
-    });
+       ym(107245981, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            ecommerce:"dataLayer"
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/107245981" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
 
-    // ... остальной код (меню, скролл и т.д.)
-});
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><span class="logo-icon">▲</span> FutureSim</div>
+            <nav class="desktop-nav">
+                <a href="#whatis">О продукте</a>
+                <a href="#howitworks">Как это работает</a>
+                <a href="#benefits">Преимущества</a>
+                <a href="#whoitisfor">Для кого</a>
+            </nav>
+            <div class="nav-cta">
+                <button class="btn btn-secondary">Войти</button>
+            </div>
+            <button class="mobile-nav-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
 
+    <section class="hero" id="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1 class="main-headline">А если бы ты мог увидеть последствия своих решений?</h1>
+                <p class="hero-description">FutureSim — это AI-платформа для моделирования карьеры.</p>
+                <button class="btn btn-primary btn-lg" onclick="if(typeof ym !== 'undefined') { ym(107245981, 'reachGoal', 'click_try_service'); console.log('Цель отправлена'); }">
+                    Начать симуляцию
+                </button>
+            </div>
+            <div class="hero-visual">
+                <div class="holographic-dashboard-mock">
+                    <div class="dashboard-rect r1"></div>
+                    <div class="dashboard-rect r2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    // --- Mobile Menu Toggle ---
-    const navToggle = document.querySelector('.mobile-nav-toggle');
-    const desktopNav = document.querySelector('.desktop-nav');
-    const navCta = document.querySelector('.nav-cta');
-    const header = document.querySelector('header');
-
-    if (navToggle) {
-        navToggle.addEventListener('click', () => {
-            desktopNav.classList.toggle('active');
-            navCta.classList.toggle('active');
-            navToggle.classList.toggle('open');
-            
-            if (desktopNav.classList.contains('active')) {
-                desktopNav.style.display = 'flex';
-                desktopNav.style.flexDirection = 'column';
-                desktopNav.style.position = 'absolute';
-                desktopNav.style.top = '80px';
-                desktopNav.style.left = '0';
-                desktopNav.style.width = '100%';
-                desktopNav.style.backgroundColor = 'rgba(11, 20, 38, 0.95)';
-                desktopNav.style.padding = '20px';
-                desktopNav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.08)';
-            } else {
-                desktopNav.style.display = 'none';
-            }
-        });
-    }
-
-    // --- Header Scroll Effect ---
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.backgroundColor = 'rgba(11, 20, 38, 0.98)';
-            header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.15)';
-        } else {
-            header.style.backgroundColor = 'rgba(11, 20, 38, 0.9)';
-            header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.08)';
-        }
-    });
-
-    // --- Smooth Scrolling ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            if (desktopNav && desktopNav.classList.contains('active')) {
-                desktopNav.classList.remove('active');
-                navToggle.classList.remove('open');
-                desktopNav.style.display = 'none';
-            }
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            const headerHeight = document.querySelector('header').offsetHeight;
-
-            if (targetElement) {
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = targetPosition - headerHeight;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
+    <script src="script.js"></script>
+</body>
+</html>
