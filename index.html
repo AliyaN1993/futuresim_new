@@ -91,18 +91,17 @@
         </div>
     </footer>
 
-    <script>
-    function sendGoal() {
-        console.log("Кнопка нажата!");
-        if (typeof ym !== 'undefined') {
-            ym(107245981, 'reachGoal', 'click_try_service');
-            console.log("Цель отправлена в Метрику");
-            alert("Кнопка сработала! Цель отправлена."); 
-        } else {
-            console.error("Метрика не загружена");
-            alert("Ошибка: Метрика не загружена. Проверьте AdBlock.");
-        }
+   <script>
+function sendGoal() {
+    // В консоли (её видит только разработчик) запись останется, для контроля
+    console.log("Клик зафиксирован, отправляю цель в Метрику...");
+    
+    if (typeof ym !== 'undefined') {
+        ym(107245981, 'reachGoal', 'click_try_service');
+    } else {
+        console.warn("Метрика не загружена (возможно, включен блокировщик рекламы)");
     }
-    </script>
+}
+</script>
 </body>
 </html>
