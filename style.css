@@ -1,9 +1,5 @@
-/* --- Базовые настройки --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Базовые настройки */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
     --bg-color: #0B1426;
@@ -11,29 +7,24 @@
     --text-primary: #FFFFFF;
     --text-secondary: rgba(255, 255, 255, 0.7);
     --card-bg: rgba(255, 255, 255, 0.05);
-    --border: rgba(255, 255, 255, 0.1);
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    font-family: 'Inter', -apple-system, sans-serif;
-    line-height: 1.6;
+    font-family: sans-serif;
+    line-height: 1.5;
     overflow-x: hidden;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* --- Хедер (Исправлено для мобильных) --- */
+/* Хедер - исправляем наложение */
 header {
     height: 70px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     position: sticky;
     top: 0;
     background: rgba(11, 20, 38, 0.95);
@@ -48,63 +39,24 @@ header {
     width: 100%;
 }
 
-.logo {
-    font-weight: 800;
-    font-size: 1.2rem;
-    white-space: nowrap; /* Чтобы логотип не переносился */
+.logo { font-weight: bold; font-size: 1.2rem; display: flex; align-items: center; }
+.logo-icon { color: var(--accent-color); margin-right: 5px; }
+
+/* Скрываем навигацию на телефонах, чтобы не накладывалась */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none !important;
+    }
+    .main-headline {
+        font-size: 1.8rem !important; /* Уменьшаем заголовок для мобильных */
+    }
 }
 
-.logo span { color: var(--accent-color); }
-
-.desktop-nav {
-    display: flex;
-    gap: 20px;
-}
-
-.desktop-nav a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.desktop-nav a:hover { color: var(--accent-color); }
-
-/* --- Кнопки --- */
-.btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: inherit;
-    display: inline-block;
-}
-
-.btn-primary { background: var(--accent-color); color: #000; }
-.btn-primary:hover { transform: scale(1.02); box-shadow: 0 0 20px rgba(198, 255, 46, 0.3); }
-
-.btn-secondary { background: transparent; color: #fff; border: 1px solid var(--border); }
-
-/* --- Секции --- */
-.section-padding { padding: 60px 0; }
-.text-center { text-align: center; }
-.section-title { font-size: 2rem; margin-bottom: 40px; }
-
-/* Hero */
-.hero { padding: 60px 0; }
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.main-headline { font-size: 2.8rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
-.hero-description { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px; }
+.desktop-nav { display: flex; gap: 20px; }
+.desktop-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; }
 
 /* Сетки карточек */
+.section-padding { padding: 60px 0; }
 .whatis-grid, .steps-grid, .benefits-grid, .target-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -113,41 +65,9 @@ header {
 
 .whatis-item, .step, .benefit-card, .target-card {
     background: var(--card-bg);
-    padding: 30px;
-    border-radius: 16px;
-    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Футер */
-footer { padding: 40px 0; border-top: 1px solid var(--border); margin-top: 40px; }
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-/* --- МОБИЛЬНАЯ АДАПТАЦИЯ (Важное) --- */
-@media (max-width: 768px) {
-    /* Скрываем навигацию, если она мешает на очень маленьких экранах */
-    .desktop-nav {
-        display: none; 
-    }
-    
-    .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .main-headline {
-        font-size: 2rem;
-    }
-
-    .nav-cta .btn-secondary {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-    }
-}
+.btn { padding: 12px 24px; border-radius: 8px; border: none; font-weight: bold; background: var(--accent-color); color: #000; cursor: pointer; }
