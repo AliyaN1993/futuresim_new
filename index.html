@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FutureSim — Платформа моделирования профессионального будущего</title>
+    <title>FutureSim — Увидь свое будущее уже сегодня</title>
     
     <script type="text/javascript">
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -13,120 +13,100 @@
        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=107245981", "ym");
        ym(107245981, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/107245981" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-    <link rel="stylesheet" href="style.css?v=mvp_final">
+    <link rel="stylesheet" href="style.css?v=modern_v3">
 </head>
 <body class="dark-theme">
 
+    <div class="glow-bg"></div>
+
     <header>
         <div class="container nav-container">
-            <div class="logo"><span class="logo-icon">▲</span> FutureSim</div>
-            <nav class="desktop-nav">
-                <a href="#about">О платформе</a>
-                <a href="#how">Технология</a>
-                <a href="#audience">Категории</a>
-            </nav>
+            <div class="logo">Future<span>Sim</span></div>
             <div class="nav-cta">
-                <button class="btn btn-secondary">Личный кабинет</button>
+                <button class="btn btn-secondary">Войти</button>
             </div>
         </div>
     </header>
 
     <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <div class="badge">Professional Simulation Engine</div>
-                <h1 class="main-headline">Принимайте осознанные карьерные решения без риска.</h1>
-                <p class="hero-description">FutureSim — это не тест и не игра. Это интерактивная система моделирования жизненных сценариев, которая позволяет «прожить» выбор профессии до того, как вы инвестируете в него годы жизни.</p>
-                <button class="btn btn-primary btn-lg" onclick="sendGoal()">Пройти симуляцию</button>
-            </div>
+        <div class="container">
+            <h1 class="main-headline">А если бы ты мог увидеть последствия своих решений заранее?</h1>
+            <p class="hero-description">
+                FutureSim — ИИ-платформа моделирования жизненных сценариев. Пройди симуляцию, протестируй разные решения и узнай, как они могут повлиять на твою карьеру, доход и баланс жизни через 2–3 года.
+            </p>
+            <button class="btn btn-primary btn-lg" onclick="sendGoal()">Пройти симуляцию</button>
         </div>
     </section>
 
-    <section class="section-padding" id="about">
+    <section class="section-padding" id="how-it-works">
         <div class="container">
-            <h2 class="section-title text-center">Симуляция вместо догадок</h2>
+            <h2 class="section-title text-center">Как работает FutureSim</h2>
             <div class="grid-3">
-                <div class="card">
-                    <div class="icon-text">AI</div>
-                    <h3>Персонализация</h3>
-                    <p>Система анализирует ваш текущий опыт, навыки и цели для создания точного цифрового двойника вашей карьеры.</p>
+                <div class="step-card">
+                    <div class="step-icon">01</div>
+                    <h3>Создание профиля</h3>
+                    <p>Ты вносишь свои навыки, текущий опыт и цели. ИИ создает твою цифровую копию.</p>
                 </div>
-                <div class="card">
-                    <div class="icon-text">DATA</div>
-                    <h3>Реальные траектории</h3>
-                    <p>Моделирование строится на базе миллионов реальных сценариев успеха и ошибок в выбранной индустрии.</p>
+                <div class="step-card">
+                    <div class="step-icon">02</div>
+                    <h3>Выбор сценария</h3>
+                    <p>Выбираешь путь: от смены профессии до запуска стартапа. Проживаешь ключевые события.</p>
                 </div>
-                <div class="card">
-                    <div class="icon-text">SAFE</div>
-                    <h3>Безрисковая среда</h3>
-                    <p>Протестируйте переход в новую сферу, смену стека или открытие бизнеса в безопасных условиях симулятора.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" id="how" style="background: rgba(255,255,255,0.02);">
-        <div class="container">
-            <h2 class="section-title text-center">Процесс моделирования</h2>
-            <div class="grid-4">
-                <div class="step-box">
-                    <span class="step-num">01</span>
-                    <h3>Аналитика</h3>
-                    <p>Заполнение мини-анкеты: доход, навыки, образование и ключевые цели перехода.</p>
-                </div>
-                <div class="step-box">
-                    <span class="step-num">02</span>
-                    <h3>Погружение</h3>
-                    <p>Прохождение ключевых рабочих ситуаций и принятие решений в переломные моменты.</p>
-                </div>
-                <div class="step-box">
-                    <span class="step-num">03</span>
-                    <h3>Оценка</h3>
-                    <p>Анализ ваших действий системой: оценка компетенций и рекомендации по развитию.</p>
-                </div>
-                <div class="step-box">
-                    <span class="step-num">04</span>
-                    <h3>Результат</h3>
-                    <p>Итоговый прогноз: уровень дохода, востребованность и дорожная карта обучения.</p>
+                <div class="step-card">
+                    <div class="step-icon">03</div>
+                    <h3>Анализ будущего</h3>
+                    <p>Получаешь детальный прогноз: сколько ты будешь зарабатывать и будешь ли счастлив.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding" id="audience">
+    <section class="section-padding" id="benefits">
         <div class="container">
-            <h2 class="section-title text-center">Для кого разработана платформа</h2>
-            <div class="grid-3">
-                <div class="card-simple">
-                    <h4>Смена профессии</h4>
-                    <p>Для тех, кто хочет перейти в новую сферу, но боится потерять время и текущий доход.</p>
+            <h2 class="section-title text-center">Почему это важно</h2>
+            <div class="grid-2">
+                <div class="benefit-box">
+                    <span class="emoji">🛡️</span>
+                    <div>
+                        <h3>Безопасные ошибки</h3>
+                        <p>Лучше «прогореть» в симуляции за 10 минут, чем потерять реальные годы и деньги.</p>
+                    </div>
                 </div>
-                <div class="card-simple">
-                    <h4>Абитуриенты</h4>
-                    <p>Позволяет студентам примерить профессию до поступления в университет.</p>
-                </div>
-                <div class="card-simple">
-                    <h4>Рост навыков (40+)</h4>
-                    <p>Специальная траектория для адаптации опыта под современные требования рынка.</p>
+                <div class="benefit-box">
+                    <span class="emoji">📈</span>
+                    <div>
+                        <h3>Обоснованный рост</h3>
+                        <p>ИИ анализирует реальный рынок труда, а не просто дает общие советы.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding text-center">
+    <section class="section-padding" id="who">
         <div class="container">
-            <h2 class="cta-headline">Ваше будущее масштабируемо.</h2>
-            <p style="margin-bottom: 40px; opacity: 0.7; max-width: 600px; margin-left: auto; margin-right: auto;">Начните моделирование своего следующего шага сегодня и получите детальный разбор ваших перспектив.</p>
-            <button class="btn btn-primary btn-lg" onclick="sendGoal()">Начать симуляцию бесплатно</button>
+            <h2 class="section-title text-center">Кому подходит</h2>
+            <div class="audience-grid">
+                <div class="audience-item">Студентам</div>
+                <div class="audience-item">Тем, кто хочет сменить сферу</div>
+                <div class="audience-item">Профессионалам в поиске роста</div>
+                <div class="audience-item">Людям 40+ для перезагрузки</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta section-padding">
+        <div class="container text-center">
+            <h2 class="cta-headline">Начните моделировать свое будущее прямо сейчас</h2>
+            <p class="cta-subtext">Откройте для себя ИИ-платформу для моделирования жизненных решений. Примите обоснованные решения о карьере и развитии.</p>
+            <button class="btn btn-primary btn-lg" onclick="sendGoal()">Начать симуляцию</button>
         </div>
     </section>
 
     <footer>
-        <div class="container footer-box">
-            <div class="logo">FutureSim</div>
-            <p>&copy; 2024 FutureSim. Все права защищены. Инструмент карьерного прогнозирования.</p>
+        <div class="container footer-content">
+            <p>&copy; 2024 FutureSim. Твой личный навигатор в мире карьеры.</p>
         </div>
     </footer>
 
@@ -134,7 +114,7 @@
     function sendGoal() {
         if (typeof ym !== 'undefined') {
             ym(107245981, 'reachGoal', 'click_try_service');
-            console.log("Goal click_try_service sent successfully");
+            console.log("Goal click_try_service sent");
         }
     }
     </script>
