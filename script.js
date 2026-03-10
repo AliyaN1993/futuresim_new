@@ -1,18 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- ОТСЛЕЖИВАНИЕ ЦЕЛИ В ЯНДЕКС МЕТРИКЕ ---
-    // Находим все кнопки с текстом "Начать симуляцию"
-    const ctaButtons = document.querySelectorAll('.btn-primary');
-
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Проверяем, загружена ли Метрика, чтобы избежать ошибок в консоли
+    // Используем делегирование событий — это самый надежный способ
+    document.addEventListener('click', (event) => {
+        // Проверяем, что нажатый элемент содержит нужный класс
+        if (event.target.classList.contains('btn-primary')) {
+            console.log('Кнопка нажата!');
             if (typeof ym !== "undefined") {
                 ym(107245981, 'reachGoal', 'click_try_service');
                 console.log('Цель click_try_service отправлена в Метрику');
+            } else {
+                console.warn('Метрика (ym) не найдена. Проверьте блокировщики рекламы.');
             }
-        });
+        }
     });
+
+    // ... остальной код (меню, скролл и т.д.)
+});
 
 
     // --- Mobile Menu Toggle ---
