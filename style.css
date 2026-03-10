@@ -1,4 +1,3 @@
-/* Базовые настройки */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -7,24 +6,24 @@
     --text-primary: #FFFFFF;
     --text-secondary: rgba(255, 255, 255, 0.7);
     --card-bg: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    font-family: sans-serif;
-    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* Хедер - исправляем наложение */
 header {
-    height: 70px;
+    height: 80px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     background: rgba(11, 20, 38, 0.95);
@@ -32,42 +31,40 @@ header {
     z-index: 1000;
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
+.nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-.logo { font-weight: bold; font-size: 1.2rem; display: flex; align-items: center; }
-.logo-icon { color: var(--accent-color); margin-right: 5px; }
-
-/* Скрываем навигацию на телефонах, чтобы не накладывалась */
-@media (max-width: 768px) {
-    .desktop-nav {
-        display: none !important;
-    }
-    .main-headline {
-        font-size: 1.8rem !important; /* Уменьшаем заголовок для мобильных */
-    }
-}
+.logo { font-weight: 800; font-size: 1.4rem; white-space: nowrap; }
+.logo-icon { color: var(--accent-color); }
 
 .desktop-nav { display: flex; gap: 20px; }
 .desktop-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; }
 
-/* Сетки карточек */
-.section-padding { padding: 60px 0; }
-.whatis-grid, .steps-grid, .benefits-grid, .target-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
+.btn { padding: 12px 24px; border-radius: 8px; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.btn-primary { background: var(--accent-color); color: #000; }
+.btn-secondary { background: transparent; color: #fff; border: 1px solid var(--border); }
 
-.whatis-item, .step, .benefit-card, .target-card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
+.hero { padding: 80px 0; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+.main-headline { font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
+.hero-description { color: var(--text-secondary); margin-bottom: 30px; }
 
-.btn { padding: 12px 24px; border-radius: 8px; border: none; font-weight: bold; background: var(--accent-color); color: #000; cursor: pointer; }
+.section-padding { padding: 80px 0; }
+.text-center { text-align: center; }
+.section-title { font-size: 2.2rem; margin-bottom: 40px; }
+
+.whatis-grid, .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.whatis-item, .step { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid var(--border); text-align: left; }
+
+.icon-circle { width: 50px; height: 50px; background: var(--accent-color); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-weight: bold; }
+.step-num { color: var(--accent-color); font-weight: bold; font-size: 1.2rem; display: block; margin-bottom: 10px; }
+
+footer { padding: 40px 0; border-top: 1px solid var(--border); margin-top: 40px; }
+.footer-container { display: flex; justify-content: space-between; opacity: 0.6; }
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 768px) {
+    .desktop-nav { display: none; } /* Скрываем меню, чтобы не накладывалось */
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .main-headline { font-size: 2.2rem; }
+    .hero-visual { display: none; }
+}
