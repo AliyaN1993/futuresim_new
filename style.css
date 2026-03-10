@@ -3,10 +3,10 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bg: #050810;
-    --accent: #C6FF2E;
+    --bg: #030509; /* Сделали фон еще глубже */
+    --accent: #C6FF2E; /* Зеленый неон */
+    --accent-glow: rgba(198, 255, 46, 0.15);
     --text: #ffffff;
-    --card-bg: rgba(255, 255, 255, 0.03);
     --border: rgba(255, 255, 255, 0.08);
 }
 
@@ -16,18 +16,56 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* Эффект свечения на фоне */
-.glow-bg {
+/* --- Декоративные визуальные элементы в стиле референсов --- */
+.relative { position: relative; }
+
+/* Глобальное неоновое свечение */
+.glow-bg_main {
     position: fixed;
-    top: -10%; left: 50%; width: 100%; height: 500px;
-    background: radial-gradient(circle, rgba(198, 255, 46, 0.08) 0%, transparent 70%);
+    top: -100px; left: 50%; width: 50%; height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
     transform: translateX(-50%);
     z-index: -1;
+    pointer-events: none;
 }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+/* Имитация абстрактной 3D-сферы (референс d240...) */
+.visual-sphere_bg {
+    position: fixed;
+    top: 60%; right: -100px; width: 300px; height: 300px;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%);
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px rgba(255,255,255,0.02);
+    z-index: -2;
+    filter: blur(5px);
+}
+
+/* Имитация кристалла (референс 673c...) */
+.visual-crystal_1 {
+    position: absolute;
+    top: -50px; left: -100px; width: 200px; height: 200px;
+    background: linear-gradient(135deg, rgba(198, 255, 46, 0.1), rgba(255,255,255,0.05));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border: 1px solid rgba(198, 255, 46, 0.2);
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Сфера в преимуществах */
+.visual-sphere_2 {
+    position: absolute;
+    bottom: -80px; right: -50px; width: 150px; height: 150px;
+    background: radial-gradient(circle, rgba(198, 255, 46, 0.08), transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* --- Стилизация контента --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; z-index: 5; position: relative; }
 .section-padding { padding: 100px 0; }
 .text-center { text-align: center; }
 
@@ -38,48 +76,71 @@ header { height: 80px; display: flex; align-items: center; border-bottom: 1px so
 
 /* Buttons */
 .btn { padding: 16px 32px; border-radius: 12px; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; }
-.btn-primary { background: var(--accent); color: #000; box-shadow: 0 8px 24px rgba(198, 255, 46, 0.2); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(198, 255, 46, 0.4); }
-.btn-secondary { background: var(--card-bg); color: #fff; border: 1px solid var(--border); }
+.btn-primary { 
+    background: var(--accent); color: #000; 
+    box-shadow: 0 8px 32px rgba(198, 255, 46, 0.2), inset 0 0 10px rgba(255,255,255,0.5); 
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(198, 255, 46, 0.5); }
+.btn-secondary { background: rgba(255,255,255,0.02); color: #fff; border: 1px solid var(--border); }
 
 /* Hero */
 .hero { padding: 120px 0 80px; text-align: center; }
-.main-headline { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
+.main-headline { 
+    font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; 
+    background: linear-gradient(180deg, #fff, rgba(255,255,255,0.6)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
 .hero-description { font-size: 1.25rem; opacity: 0.7; max-width: 750px; margin: 0 auto 40px; }
 
-/* Cards & Grid */
+/* --- GLASSMORPHISM Карточки (Стекломорфизм) --- */
 .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 50px; letter-spacing: -1px; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
 
-.step-card { 
-    background: var(--card-bg); padding: 40px; border-radius: 24px; border: 1px solid var(--border);
+.glass-card { 
+    background: rgba(255, 255, 255, 0.01); /* Матовое стекло */
+    padding: 40px; border-radius: 24px; border: 1px solid var(--border);
+    backdrop-filter: blur(10px); /* Размытие фона под карточкой */
+    transition: 0.3s;
+    z-index: 10;
+    position: relative;
+}
+.glass-card:hover { border-color: rgba(198, 255, 46, 0.4); transform: translateY(-3px); background: rgba(255, 255, 255, 0.03); }
+.step-icon { color: var(--accent); font-weight: 800; font-size: 1.5rem; margin-bottom: 20px; text-shadow: 0 0 10px var(--accent); }
+
+.glass-box { 
+    display: flex; gap: 20px; padding: 30px; border-radius: 20px; 
+    border: 1px solid var(--border); align-items: flex-start;
+    background: rgba(255,255,255,0.01);
+    backdrop-filter: blur(5px);
     transition: 0.3s;
 }
-.step-card:hover { border-color: rgba(198, 255, 46, 0.3); background: rgba(255, 255, 255, 0.05); }
-.step-icon { color: var(--accent); font-weight: 800; font-size: 1.5rem; margin-bottom: 20px; opacity: 0.5; }
-
-.benefit-box { 
-    display: flex; gap: 20px; background: var(--card-bg); padding: 30px; border-radius: 20px; 
-    border: 1px solid var(--border); align-items: flex-start;
-}
+.glass-box:hover { border-color: rgba(198, 255, 46, 0.2); }
 .emoji { font-size: 2rem; }
 
 /* Audience */
 .audience-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-.audience-item { 
-    padding: 12px 24px; background: var(--card-bg); border: 1px solid var(--border); 
+.audience-item_tag { 
+    padding: 12px 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); 
     border-radius: 100px; font-weight: 600; font-size: 0.95rem;
+    backdrop-filter: blur(2px);
 }
 
 /* Final CTA */
+.final-cta { background: linear-gradient(180deg, transparent, rgba(198,255,46,0.02) 50%, transparent); }
 .cta-headline { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; }
 .cta-subtext { opacity: 0.7; font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; }
+.visual-glow_box {
+    position: absolute; top: 50%; left: 50%; width: 100px; height: 100px;
+    background: var(--accent); border-radius: 50%; filter: blur(100px);
+    z-index: 1; opacity: 0.1;
+}
 
 footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; opacity: 0.5; font-size: 0.9rem; }
 
 /* Mobile */
 @media (max-width: 768px) {
     .main-headline { font-size: 2.2rem; }
-    .grid-2 { grid-template-columns: 1fr; }
+    .hero { padding: 80px 0; }
+    .glass-card { padding: 30px; }
+    .visual-crystal_1, .visual-sphere_bg, .visual-sphere_2 { display: none; } /* Убираем тяжелый декор на мобильных */
 }
