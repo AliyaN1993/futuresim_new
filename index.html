@@ -15,15 +15,7 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/107245981" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMXPMT81Y5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-BMXPMT81Y5');
-    </script>
-
-    <link rel="stylesheet" href="style.css?v=final_design">
+    <link rel="stylesheet" href="style.css?v=glass_3d">
 </head>
 <body class="dark-theme">
 
@@ -41,7 +33,6 @@
 
     <section class="hero">
         <div class="container hero-center">
-            <div class="hero-title-wrapper">
             <h1 class="main-headline">А если бы ты мог увидеть последствия своих решений заранее?</h1>
             <p class="hero-description">
                 FutureSim — ИИ-платформа моделирования жизненных сценариев. Пройди симуляцию, протестируй разные решения и узнай, как они могут повлиять на твою карьеру, доход и баланс жизни через 2–3 года.
@@ -52,8 +43,7 @@
 
     <section class="section-padding" id="how-it-works">
         <div class="container relative">
-            <div class="visual-crystal_1"></div>
-            <h2 class="section-title text-center">Как работает FutureSim</h2>
+            <div class="visual-crystal_1"></div> <h2 class="section-title text-center">Как работает FutureSim</h2>
             <div class="grid-3">
                 <div class="glass-card">
                     <div class="step-icon">01</div>
@@ -76,8 +66,7 @@
 
     <section class="section-padding" id="benefits">
         <div class="container relative">
-            <div class="visual-sphere_2"></div>
-            <h2 class="section-title text-center">Почему это важно</h2>
+            <div class="visual-sphere_2"></div> <h2 class="section-title text-center">Почему это важно</h2>
             <div class="grid-2">
                 <div class="glass-box">
                     <span class="emoji">🛡️</span>
@@ -90,7 +79,7 @@
                     <span class="emoji">📈</span>
                     <div>
                         <h3>Обоснованный рост</h3>
-<p>ИИ анализирует реальный рынок труда, а не просто дает общие советы.</p>
+                        <p>ИИ анализирует реальный рынок труда, а не просто дает общие советы.</p>
                     </div>
                 </div>
             </div>
@@ -98,7 +87,7 @@
     </section>
 
     <section class="section-padding" id="who">
-        <div class="container">
+        <div class="container relative">
             <h2 class="section-title text-center">Кому подходит</h2>
             <div class="audience-grid">
                 <div class="audience-item_tag">Студентам</div>
@@ -112,6 +101,7 @@
     <section class="final-cta section-padding">
         <div class="container text-center relative">
             <div class="visual-glow_box"></div>
+            
             <h2 class="cta-headline">Начните моделировать свое будущее прямо сейчас</h2>
             <p class="cta-subtext">Откройте для себя ИИ-платформу для моделирования жизненных решений. Примите обоснованные решения о карьере и развитии.</p>
             <button class="btn btn-primary btn-lg" onclick="sendGoal()">Начать симуляцию</button>
@@ -126,19 +116,9 @@
 
     <script>
     function sendGoal() {
-        console.log("Кнопка нажата: отправка в Яндекс и Google...");
-
-        // 1. Яндекс.Метрика
         if (typeof ym !== 'undefined') {
             ym(107245981, 'reachGoal', 'click_try_service');
-        }
-
-        // 2. Google Analytics
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'click_simulation', {
-                'event_category': 'engagement',
-                'event_label': 'button_main'
-            });
+            console.log("Goal sent!");
         }
     }
     </script>
