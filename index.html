@@ -5,68 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FutureSim</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #020408; color: #ffffff; font-family: 'Inter', sans-serif; }
-        .bento-card { 
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 2rem;
-        }
-        .neon-blue { color: #3b82f6; text-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
-        .hero-glow {
-            background: radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-        }
+        /* Принудительно ставим темный фон, чтобы не было белого экрана */
+        html, body { background-color: #03050a !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .card { background: #0a0e14; border: 1px solid #1e293b; border-radius: 24px; padding: 30px; transition: 0.3s; }
+        .card:hover { border-color: #3b82f6; }
+        .neon-blue { color: #3b82f6; text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+        .btn-primary { background-color: #2563eb; color: white; padding: 15px 40px; border-radius: 12px; font-weight: bold; border: none; cursor: pointer; font-size: 18px; }
     </style>
 </head>
-<body class="hero-glow">
+<body>
 
-    <nav class="max-w-7xl mx-auto px-8 py-8 flex justify-between items-center">
-        <div class="text-xl font-bold tracking-tighter uppercase">FutureSim</div>
-        <button class="px-6 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition">Войти</button>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 30px 50px; border-bottom: 1px solid #1e293b;">
+        <div style="font-size: 24px; font-weight: 800; letter-spacing: -1px;">FUTURE<span class="neon-blue">SIM</span></div>
+        <div style="color: #64748b; font-size: 14px;">Симулятор твоего будущего</div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-8 py-20 text-center">
-        <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-            ТВОЙ ТЕСТ-ДРАЙВ <br> <span class="neon-blue">БУДУЩЕГО</span>
+    <header style="text-align: center; padding: 100px 20px;">
+        <h1 style="font-size: clamp(40px, 8vw, 70px); font-weight: 800; line-height: 1.1; margin-bottom: 30px;">
+            ТВОЙ ТЕСТ-ДРАЙВ <br> <span class="neon-blue" style="font-style: italic;">БУДУЩЕГО</span>
         </h1>
-        <p class="text-xl text-white/80 mb-12">
+        <p style="font-size: 20px; color: #cbd5e1; max-width: 700px; margin: 0 auto 40px; line-height: 1.6;">
             Забудь про скучные курсы. Создай цифрового двойника и проживи 3 года в новой профессии за один вечер. Узнай свой доход и уровень счастья до того, как уволишься.
         </p>
-        <button class="px-10 py-5 bg-blue-600 rounded-2xl font-bold text-xl hover:bg-blue-500 transition shadow-lg shadow-blue-600/20">
-            Создать Аватара
-        </button>
-    </main>
+        <button class="btn-primary">Создать Аватара</button>
+    </header>
 
-    <section class="max-w-7xl mx-auto px-8 pb-32">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            
-            <div class="md:col-span-8 bento-card">
-                <h3 class="text-2xl font-bold mb-4 uppercase">Анализ потенциала</h3>
-                <p class="text-white/60 text-lg">ИИ анализирует твои софт-скиллы и строит прогноз роста на 2026-2028 годы. Пойми свои суперсилы до старта.</p>
-            </div>
-
-            <div class="md:col-span-4 bento-card flex flex-col justify-center items-center">
-                <div class="text-6xl font-bold neon-blue italic mb-2">95%</div>
-                <p class="text-xs uppercase tracking-widest text-white/40">Точность прогноза</p>
-            </div>
-
-            <div class="md:col-span-12 bento-card flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="max-w-xl">
-                    <h3 class="text-3xl font-bold mb-4 uppercase">Примерь будущее без риска</h3>
-                    <p class="text-white/60 text-lg">Узнай цену своей ошибки до того, как потратишь годы на обучение не тому. Полная симуляция карьерного пути.</p>
-                </div>
-                <div class="text-6xl">🛡️</div>
-            </div>
-
-            <div class="md:col-span-12 bento-card">
-                <h3 class="text-2xl font-bold mb-4 uppercase">Цифровой двойник</h3>
-                <p class="text-white/60 text-lg">Ваша точная копия в цифровом мире, которая обучается и делает карьеру за вас.</p>
-            </div>
-
+    <div class="bento-grid">
+        
+        <div class="card" style="grid-column: span 8;">
+            <h3 style="font-size: 24px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Анализ потенциала</h3>
+            <p style="color: #94a3b8; font-size: 18px; line-height: 1.5;">ИИ анализирует твои софт-скиллы и строит прогноз роста на 2026-2028 годы. Пойми свои суперсилы до старта.</p>
         </div>
-    </section>
+
+        <div class="card" style="grid-column: span 4; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+            <div class="neon-blue" style="font-size: 50px; font-weight: 800;">95%</div>
+            <div style="font-size: 12px; color: #475569; text-transform: uppercase; letter-spacing: 2px;">Точность прогноза</div>
+        </div>
+
+        <div class="card" style="grid-column: span 12; display: flex; align-items: center; justify-content: space-between;">
+            <div style="max-width: 70%;">
+                <h3 style="font-size: 28px; margin-bottom: 15px; text-transform: uppercase;">Примерь будущее без риска</h3>
+                <p style="color: #94a3b8; font-size: 18px;">Узнай цену своей ошибки до того, как потратишь годы на обучение не тому. Полная симуляция карьерного пути.</p>
+            </div>
+            <div style="font-size: 50px;">🛡️</div>
+        </div>
+
+        <div class="card" style="grid-column: span 12;">
+            <h3 style="font-size: 24px; margin-bottom: 15px; text-transform: uppercase;">Цифровой двойник</h3>
+            <p style="color: #94a3b8; font-size: 18px;">Ваша точная копия в цифровом мире, которая обучается и делает карьеру за вас.</p>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 50px; border-top: 1px solid #1e293b; color: #475569; font-size: 12px; letter-spacing: 1px;">
+        © 2026 FUTURESIM PROJECT. ALL RIGHTS RESERVED.
+</footer>
 
 </body>
 </html>
