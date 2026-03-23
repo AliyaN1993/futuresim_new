@@ -26,42 +26,13 @@ body {
 .glow-bg_main {
     position: fixed;
     top: -100px; left: 50%; width: 50%; height: 600px;
-    backgr…
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-    --bg: #030509; 
-    --accent: #C6FF2E; /* Твой зеленый неон */
-    --accent-glow: rgba(198, 255, 46, 0.15);
-    --text: #ffffff;
-    --border: rgba(255, 255, 255, 0.08);
-    /* Цвет нового свечения для заголовка (мягкий оранжево-золотой) */
-    --header-glow: rgba(255, 145, 0, 0.25); 
-}
-
-body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* --- Декоративные визуальные элементы --- */
-.relative { position: relative; }
-
-.glow-bg_main {
-    position: fixed;
-    top: -100px; left: 50%; width: 50%; height: 600px;
     background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
     transform: translateX(-50%);
     z-index: -1;
     pointer-events: none;
 }
 
+/* Имитация абстрактной 3D-сферы (референс d240...) */
 .visual-sphere_bg {
     position: fixed;
     top: 60%; right: -100px; width: 300px; height: 300px;
@@ -72,6 +43,7 @@ body {
     filter: blur(5px);
 }
 
+/* Имитация кристалла (референс 673c...) */
 .visual-crystal_1 {
     position: absolute;
     top: -50px; left: -100px; width: 200px; height: 200px;
@@ -83,6 +55,7 @@ body {
     pointer-events: none;
 }
 
+/* Сфера в преимуществах */
 .visual-sphere_2 {
     position: absolute;
     bottom: -80px; right: -50px; width: 150px; height: 150px;
@@ -91,7 +64,7 @@ body {
     z-index: 1;
 }
 
-/* --- Основная сетка --- */
+/* --- Стилизация контента --- */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; z-index: 5; position: relative; }
 .section-padding { padding: 100px 0; }
 .text-center { text-align: center; }
@@ -110,57 +83,23 @@ header { height: 80px; display: flex; align-items: center; border-bottom: 1px so
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(198, 255, 46, 0.5); }
 .btn-secondary { background: rgba(255,255,255,0.02); color: #fff; border: 1px solid var(--border); }
 
-/* --- Hero Section & Glow Effect --- */
+/* Hero */
 .hero { padding: 120px 0 80px; text-align: center; }
-
-.hero-title-wrapper {
-    position: relative;
-    display: inline-block;
-    z-index: 1;
-    margin-bottom: 24px;
-}
-
-/* Свечение позади заголовка */
-.hero-title-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 110%; 
-    height: 150%;
-    background: radial-gradient(
-        circle, 
-        var(--header-glow) 0%, 
-        rgba(255, 100, 0, 0.05) 45%, 
-        transparent 75%
-    );
-    filter: blur(55px);
-    z-index: 1;
-    pointer-events: none;
-}
-
 .main-headline { 
-    position: relative;
-    z-index: 2;
-    font-size: 3.5rem; font-weight: 800; line-height: 1.1; letter-spacing: -2px; 
-    background: linear-gradient(180deg, #fff, rgba(255,255,255,0.6)); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 0 !important;
+    font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; 
+    background: linear-gradient(180deg, #fff, rgba(255,255,255,0.6)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
+.hero-description { font-size: 1.25rem; opacity: 0.7; max-width: 750px; margin: 0 auto 40px; }
 
-.hero-description { font-size: 1.25rem; opacity: 0.7; max-width: 750px; margin: 0 auto 40px; position: relative; z-index: 3; }
-
-/* --- Карточки --- */
+/* --- GLASSMORPHISM Карточки (Стекломорфизм) --- */
 .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 50px; letter-spacing: -1px; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
 
 .glass-card { 
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, 0.01); /* Матовое стекло */
     padding: 40px; border-radius: 24px; border: 1px solid var(--border);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Размытие фона под карточкой */
     transition: 0.3s;
     z-index: 10;
     position: relative;
@@ -202,7 +141,6 @@ footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: cente
 @media (max-width: 768px) {
     .main-headline { font-size: 2.2rem; }
     .hero { padding: 80px 0; }
-    .hero-title-wrapper::before { width: 100%; height: 120%; filter: blur(40px); }
     .glass-card { padding: 30px; }
-    .visual-crystal_1, .visual-sphere_bg, .visual-sphere_2 { display: none; }
+    .visual-crystal_1, .visual-sphere_bg, .visual-sphere_2 { display: none; } /* Убираем тяжелый декор на мобильных */
 }
